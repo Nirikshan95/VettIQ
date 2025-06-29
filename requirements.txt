@@ -1,0 +1,6 @@
+langchain-community
+streamlit
+langchain_huggingface
+duckduckgo-search
+fastapi
+uvicorn

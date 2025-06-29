@@ -1,0 +1,14 @@
+[project]
+name = "vettiq"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "duckduckgo-search>=8.0.4",
+    "fastapi>=0.115.14",
+    "langchain-community>=0.3.26",
+    "langchain-huggingface>=0.3.0",
+    "streamlit>=1.46.1",
+    "uvicorn>=0.35.0",
+]
