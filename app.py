@@ -1,4 +1,5 @@
 import streamlit as st
+from agents.market_analyst import market_analyst_agent
 from tools.web_search_tool import web_search
 
 def main():
@@ -8,9 +9,18 @@ def main():
     query=st.input_text = st.text_input("Enter your search query:")
     if st.button("Search"):
         if query:
-            result = web_search(query)
+            agent = market_analyst_agent()
+            with st.spinner("Bot Thinking..."):
+                result=agent.invoke({"messages":query})
             st.write("Search Results:")
-            st.write(result)
+            st.write(result["messages"][-1].content)
+            st.write("list of messages:")
+            st.markdown(st.write(result["messages"]))
+            try:
+                for msg in result["messages"]:
+                    pretty_print(msg.content)
+            except Exception as e:
+                pass
         else:
             st.error("Please enter a search query.")
 

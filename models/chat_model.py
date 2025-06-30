@@ -22,6 +22,6 @@ def load_chat_model() -> ChatHuggingFace:
             repo_id=REPO_ID,
             max_new_tokens=MAX_NEW_TOKENS,
             temperature=TEMPERATURE,
-            huggingfacehub_api_key=api_key
+            huggingfacehub_api_token=api_key
         )
     )

@@ -4,3 +4,4 @@ langchain_huggingface
 duckduckgo-search
 fastapi
 uvicorn
+langgraph

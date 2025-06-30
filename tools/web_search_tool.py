@@ -1,5 +1,6 @@
-from langchain_community.tools import DuckDuckGoSearchRun
+from langchain_community.tools import DuckDuckGoSearchRun,tool
 
+@tool
 def web_search(query: str) -> str:
     """
     Perform a web search using DuckDuckGo and return the results.
@@ -12,4 +13,4 @@ def web_search(query: str) -> str:
     """
     search_tool = DuckDuckGoSearchRun()
     result = search_tool.run(query)
-    return result
+    return {"result": result}

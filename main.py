@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from pydantic import BaseModel, Field
 from typing import Annotated
+from graphs.workflow import build_graph
+from agents.market_analyst import market_analyst_agent
 
 app = FastAPI()
 
@@ -12,6 +14,8 @@ class SearchQuery(BaseModel):
 async def read_root():
     return {"message": "Welcome to the VettIQ API"}
 
-@app.post("/search")
-def search(query: SearchQuery):
-    return {"query": query.query, "message": "This is a placeholder for the search functionality."}
+@app.post("/research")
+def search(request: SearchQuery):
+    graph=build_graph()
+    result=graph.invoke(request.query)
+    return {"query": request.query, "result": result}
