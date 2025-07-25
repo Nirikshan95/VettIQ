@@ -3,11 +3,22 @@ Review the idea, market analysis, competitor analysis, and risk assessment.
 Give a clear Go/No-Go (or Conditional Go) recommendation with reasoning.  
 Offer actionable suggestions.  
 
-Return in structured format:
+give the result in proper output format 
 
 Recommendation:
 - Decision: "Go" / "No-Go" / "Conditional Go"
-- Reasoning
 
-Action Items:
-- Suggested improvements or next steps
+advice:
+- Suggested improvements or next steps if your Recommended Decision is "Go" or "Conditional Go"
+- else critique or reasons for why it is not good to "Go" ("No-Go") 
+
+format instructions are : {format_instructions}
+
+here the context:
+startup idea :{startup_idea}
+
+market analysis :{market_analysis}
+
+competitor analysis :{competition_analysis}
+
+risk assessment : {risk_assessment}

@@ -3,8 +3,6 @@ Evaluate the given idea, market analysis, and competitor analysis.
 Identify key risks by type (market, technical, operational, regulatory, financial).  
 For each, give a brief description and mitigation strategy.  
 
-Return in structured format:
-
 Market Risks:
 - Risk
 - Severity
@@ -16,3 +14,9 @@ Technical Risks:
 - Mitigation
 
 Be realistic and constructive.
+
+here the idea : {startup_idea}
+
+here the market analysis : {market_analysis}
+
+here the competitor analysis : {competition_analysis}
