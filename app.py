@@ -1,26 +1,24 @@
 import streamlit as st
-from agents.market_analyst import market_analyst_agent
-from tools.web_search_tool import web_search
+from graphs.workflow import build_graph
 
 def main():
     st.set_page_config(page_title="VettIQ", layout="centered", initial_sidebar_state="auto",page_icon=":mag_right:")
-    st.title("VettIQ Web Search Tool")
-    st.write("This tool allows you to perform web searches using DuckDuckGo.")
-    query=st.input_text = st.text_input("Enter your search query:")
-    if st.button("Search"):
-        if query:
-            agent = market_analyst_agent()
+    st.title("VettIQ : starup idea validation tool")
+    st.write("This tool allows you to perform market analysis, competitor analysis, risk assessment, and receive advice on your startup idea.")
+    idea=st.input_text = st.text_input("Enter your startup idea :")
+    if st.button("validate"):
+        if idea:
+            vettiQ = build_graph()
             with st.spinner("Bot Thinking..."):
-                result=agent.invoke({"messages":query})
+                result=vettiQ.invoke({"startup_idea":idea})
             st.write("Search Results:")
-            st.write(result["messages"][-1].content)
-            st.write("list of messages:")
-            st.markdown(st.write(result["messages"]))
-            try:
-                for msg in result["messages"]:
-                    pretty_print(msg.content)
-            except Exception as e:
-                pass
+            st.write(f"startup_idea\n :{result['startup_idea']}")
+            st.write(f"market_analysis\n :{result['market_analysis']}")
+            st.write(f"competition_analysis\n :{result['competition_analysis']}")
+            st.write(f"risk_assessment\n :{result['risk_assessment']}")
+            st.write(f"advisor_recommendations\n :{result['advisor_recommendations']}")
+            st.write(f"advice\n :{result['advice']}")
+            
         else:
             st.error("Please enter a search query.")
 

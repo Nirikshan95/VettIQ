@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel, Field
 from typing import Annotated
 from graphs.workflow import build_graph
-from agents.market_analyst import market_analyst_agent
+from nodes.market_analyst import market_analyst_agent
 
 app = FastAPI()
 
