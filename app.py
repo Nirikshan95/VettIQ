@@ -6,9 +6,10 @@ def main():
     st.title("VettIQ : starup idea validation tool")
     st.write("This tool allows you to perform market analysis, competitor analysis, risk assessment, and receive advice on your startup idea.")
     idea=st.input_text = st.text_input("Enter your startup idea :")
+    vettiQ = build_graph()
     if st.button("validate"):
         if idea:
-            vettiQ = build_graph()
+            
             with st.spinner("Bot Thinking..."):
                 result=vettiQ.invoke({"startup_idea":idea})
             st.write("Search Results:")
