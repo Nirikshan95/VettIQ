@@ -1,5 +1,7 @@
 import os
 
+# URL
+BASE_URL = "http://localhost:8000/"
 # chat model
 REPO_ID = os.path.join("deepseek-ai","DeepSeek-V3-0324")
 TEMPERATURE = 0.7
