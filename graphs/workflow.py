@@ -27,13 +27,13 @@ def build_graph():
         
         graph=graph_builder.compile()       # compile the graph
         
-        #graph visualization
+        """#graph visualization
         try:
             graph_img_path=os.makedirs(GRAPH_VISUALIZATION_PATH,exist_ok=True)
             graph.get_graph().draw_mermaid_png(output_file_path=graph_img_path,padding=50,background_color="gray")
         except Exception as e:
             print(f"Error in graph visualization: {e}")
-        
+        """
         return graph
     except Exception as e:
         print(f"Error in building graph: {e}")

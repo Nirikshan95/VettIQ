@@ -38,6 +38,6 @@ def assess_risk(state: AgentState) -> AgentState:
             "market_analysis": state["market_analysis"],
             "competition_analysis": state["competition_analysis"]
         })
-        return {"risk_assessment": response.content}
+        return {"risk_assessment": response.risk_assessment}
     except Exception as e:
         raise ValueError(f"Error analyzing risk: {e}")

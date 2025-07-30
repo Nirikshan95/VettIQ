@@ -19,15 +19,14 @@ async def read_root():
 def research(idea:StartupIdea):
     try:
         result= graph.invoke({"startup_idea":idea.startup_idea})
-        
         return JSONResponse(status_code=200, 
                             content={
-                                "startup_idea": result.startup_idea,
-                                "market_analysis":result.market_analysis,
-                                "competition_analysis": result.competition_analysis,
-                                "risk_assessment": result.risk_assessment,
-                                "advisor_recommendations": result.advisor_recommendations,
-                                "advice": result.advice}
+                                "startup_idea": result["startup_idea"],
+                                "market_analysis":result["market_analysis"],
+                                "competition_analysis": result["competition_analysis"],
+                                "risk_assessment": result["risk_assessment"],
+                                "advisor_recommendations": result["advisor_recommendations"],
+                                "advice": result["advice"]}
                             )
     except Exception as e:
         return HTTPException(status_code=400, detail=str(e))
