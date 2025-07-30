@@ -18,3 +18,5 @@ Key Trends:
 Opportunities:
 - Opportunity 1
 - Opportunity 2
+
+here the format instructions :{format_instructions}

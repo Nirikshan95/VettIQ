@@ -8,23 +8,24 @@ def main():
     st.title("VettIQ : starup idea validation tool")
     st.write("This tool allows you to perform market analysis, competitor analysis, risk assessment, and receive advice on your startup idea.")
     idea=st.input_text = st.text_input("Enter your startup idea :")
-    vettiQ = build_graph()
+    
     if st.button("validate"):
-        if idea:
-            
-            with st.spinner("Bot Thinking..."):
+        if idea:  
+            with st.spinner("validating..."):
                 try:
                     result=requests.post(f"{BASE_URL}/validate", json={"startup_idea": idea})
                     if result.status_code == 200:
                         result = result.json()
-                        result=result['validation_result']
-                        st.write("Search Results:")
-                        st.write(f"startup_idea\n :{result['startup_idea']}")
-                        st.write(f"market_analysis\n :{result['market_analysis']}")
-                        st.write(f"competition_analysis\n :{result['competition_analysis']}")
-                        st.write(f"risk_assessment\n :{result['risk_assessment']}")
-                        st.write(f"advisor_recommendations\n :{result['advisor_recommendations']}")
-                        st.write(f"advice\n :{result['advice']}")
+                        st.write("Search Results:\n")
+                        st.markdown(f"advice\n :{result['advice']}\n\n")
+                        st.markdown(f"advisor_recommendations\n :{result['advisor_recommendations']}\n")
+                        st.write("Analysis Results:")
+                        st.markdown(f"startup_idea\n :{result['startup_idea']}")
+                        st.markdown(f"market_analysis\n :{result['market_analysis']}")
+                        st.markdown(f"competition_analysis\n :{result['competition_analysis']}")
+                        st.markdown(f"risk_assessment\n :{result['risk_assessment']}")
+                        
+                        
                     else:
                         st.error(f"Error: {result.status_code} - {result.text}")
                 except requests.exceptions.ConnectionError:

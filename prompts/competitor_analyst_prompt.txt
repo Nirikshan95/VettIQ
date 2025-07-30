@@ -19,3 +19,5 @@ Recommendations:
 here the startup idea : {startup_idea}
 
 here the market analysis :{market_analysis}
+
+here the format instructions :{format_instructions}

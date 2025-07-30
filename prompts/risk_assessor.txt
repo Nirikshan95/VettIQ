@@ -13,6 +13,8 @@ Technical Risks:
 - Severity
 - Mitigation
 
+here the format instructions :{format_instructions}
+
 Be realistic and constructive.
 
 here the idea : {startup_idea}
