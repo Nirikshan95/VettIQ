@@ -50,8 +50,8 @@ VettIQ follows a modular microservices architecture with clear separation of con
 
 ### 1. Clone the Repository
 ```bash
-git clone <your-repository-url>
-cd vettiq
+git clone https://github.com/Nirikshan95/VettIQ.git
+cd VettIQ
 ```
 
 ### 2. Set Up Python Environment
